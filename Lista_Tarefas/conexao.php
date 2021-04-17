@@ -11,7 +11,7 @@
 
             try {
 
-                $conexao = new PDO('mysql:host' . $this->host . ';dabname' . $this->dbname, $this->user, $this->pass);
+                $conexao = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->dbname, $this->user, $this->pass);
 
                 return $conexao;
             } catch(PDOException $e) {
