@@ -22,7 +22,13 @@
          }
 
         public function recuperar() { // READ
-            
+            $query = "select t.id, s.status, tarefa from tb_tarefas t inner join tb_status s on s.id = t.id_status;";
+
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
         }
 
         public function atualizar() { // UPDATE
