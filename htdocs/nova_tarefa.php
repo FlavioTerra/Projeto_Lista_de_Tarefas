@@ -69,7 +69,7 @@
 										<input type="text" class="form-control" name="tarefa" placeholder="Exemplo: Lavar o carro">
 									</div>
 
-									<button class="btn btn-primary">Cadastrar</button>
+									<button type="submit" class="btn btn-primary">Cadastrar</button>
 								</form>
 							</div>
 						</div>

@@ -11,3 +11,7 @@
 h4 {
 	color: #139bd1 !important;
 }
+
+i:hover {
+	cursor: pointer;
+}

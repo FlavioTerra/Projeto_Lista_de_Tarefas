@@ -13,6 +13,8 @@
 
 		<title>App Lista Tarefas</title>
 		
+		<!-- JavaScript -->
+		<script type="text/javascript" src="js/script.js"></script>	
 		<!-- Stylesheet -->
 		<link rel="stylesheet" href="css/style.css">
 		<!-- Bootstrap 4.6 -->
@@ -64,11 +66,13 @@
 									foreach($lista_tarefas as $key => $value) {
 								?>
 
-								<div class="row mb-3 d-flex align-items-center tarefa">
-									<div class="col-sm-9"><?= $value->tarefa . " ($value->status)"?></div>
+								<div class="row mb-3 d-flex align-items-center">
+									<div class="col-sm-9" id="tarefa_<?=$value->id?>">
+										<?= $value->tarefa . " ($value->status)"?>
+									</div>
 									<div class="col-sm-3 mt-2 d-flex justify-content-between">
-										<i class="fas fa-trash-alt fa-lg text-danger"></i>
-										<i class="fas fa-edit fa-lg text-info"></i>
+										<i class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?=$value->id?>)"></i>
+										<i class="fas fa-edit fa-lg text-info" onclick="editar(<?=$value->id?>, '<?= $value->tarefa?>')"></i>
 										<i class="fas fa-check-square fa-lg text-success"></i>
 									</div>
 								</div>
@@ -82,7 +86,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>					
 
 		<!-- Bootstrap 4.6 -->
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
