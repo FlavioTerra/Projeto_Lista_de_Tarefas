@@ -1,5 +1,6 @@
 <?php
 
+	// Toda vez que a página todas_tarefas.php for acessada o método $ação é setado com 'recuperar'
 	$acao = 'recuperar';
 	require "./tarefa_controller.php";
 
@@ -63,20 +64,27 @@
 								<hr />
 
 								<?
+									// Percorre os registros recuperados em tarefa.service.php no método recuperar
 									foreach($lista_tarefas as $key => $value) {
 								?>
+										<div class="row mb-3 d-flex align-items-center">
+											<div class="col-sm-9" id="tarefa_<?=$value->id?>">
+												<?= $value->tarefa . " ($value->status)"?>
+											</div>
+											<div class="col-sm-3 mt-2 d-flex justify-content-between">
+												<i class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?=$value->id?>, 'todas_tarefas')"></i>
 
-								<div class="row mb-3 d-flex align-items-center">
-									<div class="col-sm-9" id="tarefa_<?=$value->id?>">
-										<?= $value->tarefa . " ($value->status)"?>
-									</div>
-									<div class="col-sm-3 mt-2 d-flex justify-content-between">
-										<i class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?=$value->id?>)"></i>
-										<i class="fas fa-edit fa-lg text-info" onclick="editar(<?=$value->id?>, '<?= $value->tarefa?>')"></i>
-										<i class="fas fa-check-square fa-lg text-success"></i>
-									</div>
-								</div>
+												<?
+													if($value->status != 'realizado') {
+												?>
+													<i class="fas fa-edit fa-lg text-info" onclick="editar(<?=$value->id?>, '<?= $value->tarefa?>', 'todas_tarefas')"></i>
+													<i class="fas fa-check-square fa-lg text-success" onclick="marcarRealizada(<?=$value->id?>, 'todas_tarefas')"></i>
+												<?
+													}
+												?>
 
+											</div>
+										</div>
 								<? 
 									} 
 								?>

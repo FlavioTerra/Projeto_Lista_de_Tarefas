@@ -1,9 +1,9 @@
-function editar(id, descricao) {
+function editar(id, descricao, page) {
 
     // criar um form de edição
     let form = document.createElement('form');
     form.method = 'post';
-    form.action = 'tarefa_controller.php?acao=atualizar';
+    form.action = `${page}.php?pag=${page}&acao=atualizar`;
     form.className = 'row';
 
     // criar um input para entrada de texto
@@ -44,6 +44,10 @@ function editar(id, descricao) {
     tarefa.insertBefore(form, tarefa[0]);
 }
 
-function remover(id) {
-    location.href = `todas_tarefas.php?acao=remover&id=${id}`;
+function remover(id, page) {
+    location.href = `${page}.php?pag=${page}&acao=remover&id=${id}`;
+}
+
+function marcarRealizada(id, page) {
+    location.href = `${page}.php?pag=${page}&acao=marcarRealizada&id=${id}`;
 }

@@ -30,10 +30,10 @@
 					<div class="collapse navbar-collapse" id="main-target">
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item">
-								<a href="#" class="nav-link active">Tarefas pendentes</a>
+								<a href="index.php" class="nav-link">Tarefas pendentes</a>
 							</li>
 							<li class="nav-item">
-								<a href="nova_tarefa.php" class="nav-link">Nova tarefa</a>
+								<a href="#" class="nav-link active">Nova tarefa</a>
 							</li>
 							<li class="nav-item">
 								<a href="todas_tarefas.php" class="nav-link">Todas tarefas</a>
@@ -44,32 +44,34 @@
 			</nav>
 		</header>
 
+		<?
+			// o resultado 1 é setado em tarefa_controller.php caso a inclusão seja bem sucedida
+			if(isset($_GET['inclusao']) && $_GET['inclusao'] == 1) {
+		?>
+			<div class="bg-success pt-2 text-white d-flex justify-content-center">
+				<h5>Tarefa inserida com sucesso!</h5>
+			</div>
+		<? 
+			} 
+		?>
+
 		<div class="container app">
 			<div class="row">
 				<div class="col-md">
 					<div class="container pagina">
 						<div class="row">
 							<div class="col">
-								<h4>Tarefas pendentes</h4>
+								<h4>Nova tarefa</h4>
 								<hr />
 
-								<div class="row mb-3 d-flex align-items-center tarefa">
-									<div class="col-sm-9">Lavar o carro</div>
-									<div class="col-sm-3 mt-2 d-flex justify-content-between">
-										<i class="fas fa-trash-alt fa-lg text-danger"></i>
-										<i class="fas fa-edit fa-lg text-info"></i>
-										<i class="fas fa-check-square fa-lg text-success"></i>
+								<form method="post" action="tarefa_controller.php?acao=inserir">
+									<div class="form-group">
+										<label>Descrição da tarefa:</label>
+										<input type="text" class="form-control" name="tarefa" placeholder="Exemplo: Lavar o carro">
 									</div>
-								</div>
 
-								<div class="row mb-3 d-flex align-items-center tarefa">
-									<div class="col-sm-9">Passear com o cachorro</div>
-									<div class="col-sm-3 mt-2 d-flex justify-content-between">
-										<i class="fas fa-trash-alt fa-lg text-danger"></i>
-										<i class="fas fa-edit fa-lg text-info"></i>
-										<i class="fas fa-check-square fa-lg text-success"></i>
-									</div>
-								</div>
+									<button type="submit" class="btn btn-primary">Cadastrar</button>
+								</form>
 							</div>
 						</div>
 					</div>
