@@ -3,6 +3,7 @@
   <img alt="Logo" src="./htdocs/Lista_de_Tarefas/img/logo.png" />
 </p>
 
+## :dart: Description 
 <p align="justify">
   The To-Do List project aims to apply the concepts studied
   using the PHP language with communication between the MySQL database.
@@ -13,16 +14,18 @@
   be completed, updated, even deleted.
 </p>
 
-## Status
-<h3 align="center">finished project</h3>
+## :chart: Status
+<h3 align="center">
+  :heavy_check_mark: Finished Project :rocket:
+</h3>
 
-## Features
+## :pencil: Features
 
 - [x] task registration
 - [x] listing of pending tasks
 - [x] Listing of all tasks
 
-## Application Images
+## :camera: Application Images
 
 <h2 align="center">Task registration</h2>
 <h4 align="center">
