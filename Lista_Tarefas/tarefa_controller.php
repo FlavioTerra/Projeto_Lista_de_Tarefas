@@ -18,7 +18,7 @@
 
         $tarefaService->inserir();
 
-        header('Location: index.php?inclusao=1');
+        header('Location: nova_tarefa.php?inclusao=1');
 
     
     } else if($acao == 'recuperar') { // Variavel $acao setada no arquivo todas_tarefas.php
