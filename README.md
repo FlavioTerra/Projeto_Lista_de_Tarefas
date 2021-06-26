@@ -33,7 +33,7 @@
   using the PHP language with communication between the MySQL database.
 </p>
 
-## :pencil: Features
+## :gear: Features
 
 - [x] Task Registration
 - [x] Listing of Pending Tasks
@@ -45,7 +45,7 @@
   - Task Edit
   - Task Delete
 
-## :camera: Layout
+## :art: Layout
 
 <h3 align="center">Task registration</h3>
 <h4 align="center">
